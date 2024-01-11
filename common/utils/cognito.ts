@@ -18,8 +18,8 @@ const authParams = {
 
 export const cognito = new AWS.CognitoIdentityServiceProvider({
   region: process.env.REGION_AWS,
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET,
+  accessKeyId: process.env.ACCESS_KEY_AWS,
+  secretAccessKey: process.env.SECRET_AWS,
 });
 
 export async function getToken(type: "id" | "access" | "refresh") {
