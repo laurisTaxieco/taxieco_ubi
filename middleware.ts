@@ -16,7 +16,10 @@ const JWKS = createRemoteJWKSet(new URL(process.env.COGNITO_URI!));
 
 const nodeEnv = process.env.NODE_ENV;
 
-const baseURL = nodeEnv !== "production" ? "http://localhost:3000" : "";
+const baseURL =
+  nodeEnv !== "production"
+    ? "http://localhost:3000"
+    : "taxieco-ubi-dashboard.vercel.app";
 
 function decodeHeader(token: string) {
   try {
