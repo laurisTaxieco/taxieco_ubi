@@ -19,6 +19,7 @@ const LoginCard = () => {
 
   async function login(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault();
+    setValidPassword(false);
     try {
       await fetch(loginUrl, {
         method: "POST",
@@ -41,7 +42,6 @@ const LoginCard = () => {
         });
     } catch (err) {
       console.log(err);
-    } finally {
       setUsername("");
       setPassword("");
     }
